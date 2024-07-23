@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<%= link_to "プロフィール編集", users_path %>
+<%= link_to "プロフィール編集", user_path(current_user) %>
 
 <h1>New Book</h1>
 <%= form_with model: @book do |f| %>

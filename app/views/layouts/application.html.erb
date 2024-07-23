@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/c57ff49e58.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+      <span><%= link_to "Booksers", root_path %></span>
       <% if user_signed_in? %>
         <li>
           <%= link_to "Home", user_path(current_user.id) %>
@@ -39,9 +40,12 @@
           <%= link_to "Log_in", new_user_session_path %>
         </li>
       <% end %>
-  </header>
+    </header>
     <main>
-    <%= yield %>
+      <div>
+        <%= flash[:notice] %>
+      </div>
+      <%= yield %>
     </main>
 
   </body>
