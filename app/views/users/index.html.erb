@@ -14,11 +14,11 @@
         </tr>
       </table>
       <div class="row">
-        <%= link_to user_path(current_user), class: "btn  btn-secondary btn-lg" do %>
+        <%= link_to edit_user_path(current_user), class: "btn  btn-secondary btn-lg" do %>
           <i class="fa-solid fa-user-gear"></i>
         <% end %>
       </div>
-      <h1 class="mt-3">New Book</h1>
+      <h1 class="mt-3">New book</h1>
       <%= form_with model: @book do |f| %>
         <h4>画像</h4>
         <%= f.file_field :image, accept: "image/*" %>
